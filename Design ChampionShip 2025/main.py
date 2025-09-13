@@ -58,8 +58,8 @@ root.configure(bg="#f4f4f4")
 
 chat_box = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=55, height=20, font=("Arial", 12), state="disabled")
 chat_box.pack(padx=10, pady=10)
-chat_box.tag_config("bot", foreground="black", font=("Arial", 12, "italic"))
-chat_box.tag_config("user", foreground="blue", font=("Arial", 12, "bold"))
+chat_box.tag_config("bot", foreground="green", font=("Arial", 12, "italic"))
+chat_box.tag_config("user", foreground="black", font=("Arial", 12, "bold"))
 
 
 welcome_message = "EcoBot: Type an item and I'll tell you if it's recyclable, hazardous, or compostable. I will also add tips.\n\n"
