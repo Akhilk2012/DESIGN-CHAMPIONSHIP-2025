@@ -9,16 +9,16 @@ def classify_item(query):
     conn = sqlite3.connect("waste_classification.db")
     cursor = conn.cursor()
 
-    cursor.execute("SELECT category, tip FROM waste_items WHERE item_name=?", (query,))
+    # Get full response
+    cursor.execute("SELECT response FROM waste_items WHERE item_name=?", (query,))
     result = cursor.fetchone()
     conn.close()
 
     if result:
-        category, tip = result
-        return f"{query.title()} -> {category} -> Tip: {tip}"
+        response = result[0]  
+        return f"{query.title()} -> {response}"
     else:
         return "Sorry, I don't have information on that item. Try another one!"
-
 
 def send_message(event=None):
     user_input = entry.get().strip()
@@ -99,4 +99,3 @@ send_button.place(x=120, y=400, width=100, height=35)
 clear_button.place(x=260, y=400, width=100, height=35)
 
 root.mainloop()
-
