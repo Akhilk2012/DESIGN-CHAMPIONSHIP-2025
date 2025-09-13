@@ -1,15 +1,11 @@
 import sqlite3
 import csv
 
-# ---------- CONFIG ----------
 DATABASE_FILE = "waste_classification.db"
 CSV_FILE = "waste_items.csv"
-# ----------------------------
-
 
 conn = sqlite3.connect(DATABASE_FILE)
 cursor = conn.cursor()
-
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS waste_items (
@@ -20,19 +16,18 @@ CREATE TABLE IF NOT EXISTS waste_items (
 )
 """)
 
-
 with open(CSV_FILE, newline='', encoding='utf-8') as csvfile:
     reader = csv.DictReader(csvfile, skipinitialspace=True)
     for row in reader:
-        print(row)  
+        item = row['item'].strip().lower()
+        response = row['response'].strip()
         try:
             cursor.execute(
                 "INSERT INTO waste_items (item_name, response, source) VALUES (?, ?, ?)",
-                (row['item'].lower(), row['response'], 'csv')
+                (item, response, 'csv')
             )
         except sqlite3.IntegrityError:
-            continue  # skip if already exists
-
+            continue  # skip duplicates
 
 conn.commit()
 print("CSV items imported successfully!")
