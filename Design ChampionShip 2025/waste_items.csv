@@ -1,50 +1,51 @@
-item_name,category,tip
-books, Recyclable, Donate them to libraries or charity shops so others can enjoy them.
-newspaper, Recyclable, Keep it dry and bundle it for recycling collection.
-magazine, Recyclable, Recycle clean magazines or give them to schools.
-cardboard box, Recyclable, Flatten the boxes and remove any tape before recycling.
-paper bag, Recyclable, Reuse if possible, otherwise recycle with clean paper.
-plastic bottle, Recyclable, Rinse and remove caps before recycling.
-aluminum can, Recyclable, Flatten and rinse cans before recycling.
-glass bottle, Recyclable, Rinse and separate by color before recycling.
-milk carton, Recyclable, Rinse and recycle with other cartons.
-food wrapper, Recyclable, Check local guidelines; many wrappers can be recycled.
-egg carton, Recyclable, Recycle clean cardboard or foam cartons.
-envelope, Recyclable, Remove plastic windows before recycling paper envelopes.
-paper cup, Recyclable, Rinse and recycle if accepted in your area.
-shopping flyer, Recyclable, Recycle clean flyers with paper.
-pizza box, Recyclable, Remove leftover food and grease before recycling.
-banana peel, Compostable, Add to your compost bin or garden soil.
-apple core, Compostable, Drop into your compost heap instead of the trash.
-coffee grounds, Compostable, Mix them into your compost for nutrients.
-tea leaves, Compostable, Use them in compost or directly in garden soil.
-vegetable scraps, Compostable, Perfect for composting or feeding a worm bin.
-egg shells, Compostable, Crush and add them to compost to enrich soil.
-grass clippings, Compostable, Use them in compost or as mulch around plants.
-leaves, Compostable, Shred and add to compost piles.
-fruit scraps, Compostable, Compost them to reduce waste and enrich soil.
-flowers, Compostable, Add wilted flowers to compost for nutrients.
-hair clippings, Compostable, Mix them into compost or garden soil.
-wood chips, Compostable, Use in compost or as mulch.
-battery, Hazardous, Take to an e-waste collection point; never throw in trash.
-paint, Hazardous, Dispose at a hazardous waste facility; never pour down drains.
-light bulb, Hazardous, Handle carefully and recycle at designated drop-off points.
-electronics, Hazardous, Bring old devices to e-waste recycling centers.
-medicine, Hazardous, Return expired meds to pharmacies or proper collection sites.
-aerosol can, Hazardous, Empty completely and take to hazardous waste drop-off.
-pesticide container, Hazardous, Dispose at hazardous waste centers.
-thermometer, Hazardous, Mercury thermometers require special disposal.
-fluorescent tube, Hazardous, Take to a proper recycling center.
-ink cartridge, Hazardous, Recycle at electronics or office supply stores.
-spray paint, Hazardous, Use up or take leftover to hazardous waste facility.
-cooking oil, Hazardous, Collect in a sealed container and recycle properly.
-detergent bottle, Recyclable, Rinse and recycle bottles.
-plastic bag, Recyclable, Reuse if possible or recycle at drop-off locations.
-aluminum foil, Recyclable, Clean off food residue before recycling.
-styrofoam, Recyclable, Check local recycling guidelines; some facilities accept it.
-clothing, Recyclable, Donate wearable clothes to charity shops.
-shoes, Recyclable, Give old shoes to donation centers.
-toy, Recyclable, Recycle if made of accepted materials, otherwise donate.
-glass jar, Recyclable, Rinse and recycle or reuse for storage.
-metal lid, Recyclable, Recycle along with the correct container type.
-
+item,response
+plastic bottle,Recyclable -> Tip: Rinse and remove the cap before recycling.
+glass jar,Recyclable -> Tip: Wash it out and recycle with other glass items.
+cardboard box,Recyclable -> Tip: Flatten before placing in the recycling bin to save space.
+aluminum can,Recyclable -> Tip: Rinse before recycling; crushing saves space.
+newspaper,Recyclable -> Tip: Keep dry and stack neatly for recycling.
+magazine,Recyclable -> Tip: Recycle with other mixed paper products.
+notebook,Recyclable -> Tip: Remove any plastic covers or spirals first.
+plastic container,Recyclable -> Tip: Rinse thoroughly; check for recycling symbols.
+milk carton,Recyclable -> Tip: Rinse and recycle if your local facility accepts cartons.
+steel can,Recyclable -> Tip: Rinse and place with other metals.
+paper bag,Recyclable -> Tip: Fold neatly or reuse before recycling.
+tin foil,Recyclable -> Tip: Clean it and ball it up before recycling.
+plastic lid,Recyclable -> Tip: Only recycle if your facility accepts small plastics.
+egg carton,Recyclable -> Tip: Paper ones can go in recycling; foam may vary by location.
+printer paper,Recyclable -> Tip: Ensure it’s clean and free of food stains.
+glass bottle,Recyclable -> Tip: Remove caps or lids before recycling.
+juice box,Recyclable -> Tip: Check local recycling as some cartons need special processing.
+plastic cup,Recyclable -> Tip: Rinse well; avoid recycling disposable coffee cups unless accepted.
+envelope,Recyclable -> Tip: Remove plastic windows before recycling.
+brochure,Recyclable -> Tip: Recycle with other mixed paper products.
+apple core,Compostable -> Tip: Toss into compost; it will break down quickly.
+banana peel,Compostable -> Tip: Great for compost; chop into smaller pieces to speed up.
+coffee grounds,Compostable -> Tip: Compost with paper filters for richer soil.
+tea bag,Compostable -> Tip: Remove staples or plastic tags before composting.
+vegetable scraps,Compostable -> Tip: Collect and compost to reduce food waste.
+orange peel,Compostable -> Tip: Add to compost; cut up to help it break down faster.
+bread crust,Compostable -> Tip: Compost instead of tossing in the bin.
+egg shells,Compostable -> Tip: Crush before composting; adds calcium to soil.
+leaves,Compostable -> Tip: Shred before composting to speed up breakdown.
+yard trimmings,Compostable -> Tip: Compost or use as mulch for your garden.
+food leftovers,Compostable -> Tip: Compost plant-based scraps; avoid meat or dairy.
+peanut shells,Compostable -> Tip: Break them down before composting.
+corn husk,Compostable -> Tip: Compost, but shred for quicker breakdown.
+pizza crust,Compostable -> Tip: Compost small amounts; avoid oily cheese or meat toppings.
+avocado peel,Compostable -> Tip: Add to compost; will take longer to break down.
+paper towel,Compostable -> Tip: Compost only if not used with chemicals.
+straw,Compostable -> Tip: Compost or use directly as mulch.
+wood chips,Compostable -> Tip: Compost or use for landscaping.
+grass clippings,Compostable -> Tip: Layer into compost for nitrogen boost.
+meat bones,Hazardous -> Tip: Do not compost; check if your city has a special collection for food waste.
+used battery,Hazardous -> Tip: Take to a hazardous waste drop-off or electronics store.
+paint can,Hazardous -> Tip: Take to a hazardous waste facility; don’t put in bins.
+fluorescent bulb,Hazardous -> Tip: Handle carefully and take to a recycling center.
+pesticide container,Hazardous -> Tip: Dispose through hazardous waste collection only.
+motor oil bottle,Hazardous -> Tip: Take to auto shops or hazardous waste drop-offs.
+expired medicine,Hazardous -> Tip: Return to a pharmacy or collection program.
+cleaning product bottle,Hazardous -> Tip: Rinse and dispose through hazardous waste services.
+nail polish,Hazardous -> Tip: Take to hazardous waste collection; don’t pour down drains.
+lighter fluid can,Hazardous -> Tip: Hazardous; bring to official waste disposal sites.
+thermometer,Hazardous -> Tip: Handle with care; mercury ones need special disposal.
