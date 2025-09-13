@@ -1,18 +1,23 @@
 import tkinter as tk
 from tkinter import scrolledtext
-
-items = {
-    "add item": "Classify -> Tips.", #Fill in(make sure to put the items name in all lowercase)
-    "books": "Recyclable -> Tip:Charity." #Example but add more for the tip
-}
+import sqlite3
 
 
 def classify_item(query): #For the printing if item is there
     query = query.lower().strip()
-    if query in items:
-        return f"{query.title()} -> {items[query]}"
+    conn = sqlite3.connect("waste_classification.db")
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT category, tip FROM waste_items WHERE item_name=?", (query,))
+    result = cursor.fetchone()
+
+    conn.close()
+    
+    if result:
+        category, tip = result
+        return f"{query.title()} -> {category} -> Tip: {tip}"
     else:
-        return "Sorry, I don't have information on that item."
+        return "Sorry, I don't have information on that item. Try another one!"
 
 def send_message(event=None):
     user_input = entry.get().strip()
