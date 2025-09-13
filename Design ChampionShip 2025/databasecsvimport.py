@@ -1,10 +1,10 @@
 import sqlite3
 import csv
 
-
+# ---------- CONFIG ----------
 DATABASE_FILE = "waste_classification.db"
 CSV_FILE = "waste_items.csv"
-
+# ----------------------------
 
 
 conn = sqlite3.connect(DATABASE_FILE)
@@ -15,35 +15,25 @@ cursor.execute("""
 CREATE TABLE IF NOT EXISTS waste_items (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     item_name TEXT UNIQUE,
-    category TEXT,
-    tip TEXT,
+    response TEXT,
     source TEXT DEFAULT 'manual'
 )
 """)
 
 
 with open(CSV_FILE, newline='', encoding='utf-8') as csvfile:
-    reader = csv.DictReader(csvfile)
+    reader = csv.DictReader(csvfile, skipinitialspace=True)
     for row in reader:
+        print(row)  
         try:
             cursor.execute(
-                "INSERT INTO waste_items (item_name, category, tip, source) VALUES (?, ?, ?, ?)",
-                (row['item_name'].lower(), row['category'], row['tip'], 'csv')
+                "INSERT INTO waste_items (item_name, response, source) VALUES (?, ?, ?)",
+                (row['item'].lower(), row['response'], 'csv')
             )
         except sqlite3.IntegrityError:
-            # Skip if item already exists
-            continue
+            continue  # skip if already exists
+
 
 conn.commit()
 print("CSV items imported successfully!")
-
-
-def clear_manual_items():
-    cursor.execute("DELETE FROM waste_items WHERE source != 'csv'")
-    conn.commit()
-    print("All manual items cleared, CSV items preserved.")
-
-
-
 conn.close()
-print("Database ready and safe to use!")
