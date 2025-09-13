@@ -39,7 +39,7 @@ def send_message(event=None):
     else:
         response = classify_item(user_input)
         chat_box.config(state="normal")
-        chat_box.insert(tk.END, f"Bot: {response}\n\n", "bot")
+        chat_box.insert(tk.END, f"Bot: {response}\n\n", ("bot",))
         chat_box.config(state="disabled")
         chat_box.see(tk.END)
 
@@ -99,3 +99,4 @@ send_button.place(x=120, y=400, width=100, height=35)
 clear_button.place(x=260, y=400, width=100, height=35)
 
 root.mainloop()
+
