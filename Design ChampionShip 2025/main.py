@@ -18,20 +18,30 @@ def send_message(event=None):
     user_input = entry.get().strip()
     if not user_input:
         return
+    chat_box.config(state="normal")
     chat_box.insert(tk.END, f"Item: {user_input}\n", "user")
+    chat_box.config(state="disabled")
+    chat_box.see(tk.END)
     entry.delete(0, tk.END)
 
     if user_input.lower() in ["exit", "quit"]: #Exit
+        chat_box.config(state="normal")
         chat_box.insert(tk.END, "Bot: Goodbye! \n", "bot")
+        chat_box.config(state="disabled")
+        chat_box.see(tk.END)
         root.after(1000, root.destroy)
     else:
         response = classify_item(user_input)
+        chat_box.config(state="normal")
         chat_box.insert(tk.END, f"Bot: {response}\n\n", "bot")
-    chat_box.see(tk.END)
+        chat_box.config(state="disabled")
+        chat_box.see(tk.END)
 
 def clear_chat():
+    chat_box.config(state="normal")
     chat_box.delete("1.0", tk.END)
     chat_box.insert(tk.END, welcome_message, "bot")
+    chat_box.config(state="disabled")
 
 
 root = tk.Tk()
@@ -40,13 +50,19 @@ root.geometry("480x500")
 root.resizable(False, False)
 root.configure(bg="#f4f4f4")
 
-chat_box = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=55, height=20, font=("Arial", 12))
+
+chat_box = scrolledtext.ScrolledText(root, wrap=tk.WORD, width=55, height=20, font=("Arial", 12), state="disabled")
 chat_box.pack(padx=10, pady=10)
 chat_box.tag_config("bot", foreground="black", font=("Arial", 12, "italic"))
 chat_box.tag_config("user", foreground="blue", font=("Arial", 12, "bold"))
 
+
 welcome_message = "EcoBot: Type an item and I'll tell you if it's recyclable, hazardous, or compostable. I will also add tips.\n\n"
+
+chat_box.config(state="normal")
 chat_box.insert(tk.END, welcome_message, "bot")
+chat_box.config(state="disabled")
+
 
 entry = tk.Entry(root, width=50, font=("Arial", 12))
 entry.pack(pady=5)
